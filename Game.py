@@ -56,9 +56,9 @@ def main():
     pantalla = pygame.display.set_mode([ANCHO, ALTO])
 
     n = Network()
-    id = int(n.id)
+    id = int(n.get_player_id())  # Obtener el ID de jugador del servidor
     gusano = Gusano(id, (ANCHO / 2, ALTO / 2))
-    gusano_oponente = Gusano(1 - id, (ANCHO / 2, ALTO / 2 + TAM_BLOQUE))
+    gusano_oponente = Gusano(1 - id, (ANCHO / 2, ALTO / 2 + TAM_BLOQUE))  # Asignar el ID opuesto para el oponente
     gusano.start()
     gusano_oponente.start()
 
